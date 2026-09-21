@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://morgrisos.github.io/merfox-releases/sitemap.xml

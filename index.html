@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MerFox｜はじめてのAmazon物販を、迷わず一歩ずつ。</title>
+<meta name="description" content="MerFoxは、メルカリの商品探しから、Amazon用の出品ファイル作成までを画面の順番に沿って進められるアプリです。転売やAmazon出品の経験がなくても、流れを確認しながら準備できます。macOS（Apple Silicon）向け。">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#1d4ed8">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="MerFox">
+<meta property="og:title" content="MerFox｜はじめてのAmazon物販を、迷わず一歩ずつ。">
+<meta property="og:description" content="メルカリの商品探しから、Amazon用の出品ファイル作成まで。画面の順番に沿って進められます。">
+<meta property="og:url" content="https://morgrisos.github.io/merfox-releases/">
+<meta property="og:image" content="https://morgrisos.github.io/merfox-releases/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="はじめてのAmazon物販を、迷わず一歩ずつ。MerFoxの画面">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://morgrisos.github.io/merfox-releases/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#steps">4つのステップへ移動</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#hero" aria-label="MerFox ページの先頭へ">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>MerFox
+    </a>
+    <span class="version">v0.3.2 ／ macOS（Apple Silicon）</span>
+  </div>
+</header>
+
+<main>
+
+<!-- 1. ヒーロー -->
+<section id="hero" class="section hero" aria-labelledby="hero-title">
+  <div class="container">
+    <p class="eyebrow">Amazon物販をこれから始める方へ</p>
+    <h1 id="hero-title">はじめてのAmazon物販を、<br>迷わず一歩ずつ。</h1>
+    <p class="lead">メルカリの商品探しから、Amazon用の出品ファイル作成まで。画面の順番に沿って進められます。</p>
+
+    <div class="video-frame">
+      <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata"
+             poster="assets/MerFox_web_hero_poster.png" width="1920" height="1080"
+             aria-label="MerFoxの操作の流れを示す短い動画（音声なし）。候補を集める、Amazonの商品を確認する、状態と価格を決める、出品ファイルを作る、の順に画面が進みます。">
+        <source src="assets/MerFox_web_hero_v0.3.2.mp4" type="video/mp4" media="(prefers-reduced-motion: no-preference)">
+      </video>
+      <button type="button" class="play-reduced" id="play-reduced" hidden>動画を再生する</button>
+    </div>
+    <p class="video-note">動画は音声なしです。画面の内容はすべてサンプルです。</p>
+
+    <div class="cta-row">
+      <!-- パソコンでは DMG を直接ダウンロードし、スマートフォンでは配布ページの導入案内へ送る。
+           どちらを出すかは CSS だけで決める（JavaScript が無くても、スマートフォンで DMG を出さない） -->
+      <a class="btn btn-primary cta-desktop" href="https://github.com/morgrisos/merfox-releases/releases/download/v0.3.2/MerFox-0.3.2-arm64.dmg">
+        Mac版をダウンロード<span class="btn-sub">Apple Silicon搭載Mac用・約530MB</span>
+      </a>
+      <a class="btn btn-primary cta-mobile" href="https://github.com/morgrisos/merfox-releases/releases/tag/v0.3.2" target="_blank" rel="noopener">
+        Macでの入手方法を見る<span class="btn-sub">Apple Silicon搭載Mac用・GitHubの配布ページ</span>
+      </a>
+      <a class="btn btn-secondary" href="assets/MerFox_customer_guide_v0.3.2.pdf">
+        詳しい案内を見る<span class="btn-sub">PDF・12ページ</span>
+      </a>
+    </div>
+    <p class="cta-note">ご利用には、<strong>販売担当者から案内されたライセンスキー</strong>が必要です。<br>
+      <a href="https://github.com/morgrisos/merfox-releases/releases/tag/v0.3.2" target="_blank" rel="noopener">インストールの手順を見る（配布ページのReadMe）</a></p>
+  </div>
+</section>
+
+<!-- 2. 初心者が困ること -->
+<section id="problems" class="section tint" aria-labelledby="problems-title">
+  <div class="container">
+    <h2 id="problems-title">はじめての方が、最初に迷うこと</h2>
+    <ul class="cards three">
+      <li class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <p class="card-title">何を探せばよいか<br>分からない</p>
+      </li>
+      <li class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="8" height="16" rx="2"/><rect x="13" y="4" width="8" height="16" rx="2"/></svg>
+        <p class="card-title">Amazonの同じ商品を<br>見つけられるか不安</p>
+      </li>
+      <li class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>
+        <p class="card-title">出品用ファイルの<br>作り方が分からない</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. 4ステップ -->
+<section id="steps" class="section" aria-labelledby="steps-title">
+  <div class="container">
+    <h2 id="steps-title">4つのステップで、出品ファイルができます</h2>
+    <ol class="steps">
+      <li class="step">
+        <img src="assets/step-1.png" width="1100" height="420" loading="lazy"
+             alt="リサーチ条件の画面。本・CD・DVD・ゲーム・おもちゃのカテゴリと、集める件数（20件・50件・100件・200件）を選ぶボタンが並んでいる。">
+        <div class="step-text"><span class="step-num" aria-hidden="true">1</span>
+          <h3><span class="visually-hidden">ステップ1　</span>候補を集める</h3>
+          <p>キーワードやメルカリの検索結果から、商品の情報を一覧にします。</p></div>
+      </li>
+      <li class="step">
+        <img src="assets/step-2.png" width="1150" height="320" loading="lazy"
+             alt="Amazon商品設定の画面。左にメルカリの商品「サンプルパズル ソフト（Switch）限定版」、右にAmazonの候補として通常版と限定版が並んでいる。">
+        <div class="step-text"><span class="step-num" aria-hidden="true">2</span>
+          <h3><span class="visually-hidden">ステップ2　</span>Amazonの商品を確認する</h3>
+          <p>候補を見比べて、同じ商品を選びます。番号を直接入力することもできます。</p></div>
+      </li>
+      <li class="step">
+        <img src="assets/step-3.png" width="745" height="277" loading="lazy"
+             alt="出品設定の画面。商品の状態（中古－非常に良い）の選択欄と、価格の決め方（固定金額で上乗せ／率で上乗せ）の切り替え。">
+        <div class="step-text"><span class="step-num" aria-hidden="true">3</span>
+          <h3><span class="visually-hidden">ステップ3　</span>状態と価格を決める</h3>
+          <p>状態は日本語の選択肢から選び、価格の決め方を設定します。</p></div>
+      </li>
+      <li class="step">
+        <img src="assets/step-4.png" width="775" height="420" loading="lazy"
+             alt="変換が終わった画面。完了の印と、正式なAmazon出品ファイルに入った件数、対象外になった件数が表示されている。">
+        <div class="step-text"><span class="step-num" aria-hidden="true">4</span>
+          <h3><span class="visually-hidden">ステップ4　</span>出品ファイルを作る</h3>
+          <p>設定に合った商品だけのファイルができます。登録はご自身でSeller Centralから行います。</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 4. 初心者向けの理由 -->
+<section id="reasons" class="section tint" aria-labelledby="reasons-title">
+  <div class="container">
+    <h2 id="reasons-title">はじめてでも進めやすい理由</h2>
+    <ul class="cards four">
+      <li class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H4zM20 5h-4"/><path d="M20 5v13h-6"/></svg>
+        <p class="card-title">商品選びの初心者向けガイド</p>
+        <p>扱いやすい商品と、慣れるまで避けたい商品をカテゴリーごとに説明しています。</p>
+      </li>
+      <li class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <p class="card-title">画面の順番に沿って進められる</p>
+        <p>次に何をすればよいかが、いつも画面に出ています。</p>
+      </li>
+      <li class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg>
+        <p class="card-title">入らなかった理由が分かる</p>
+        <p>出品ファイルに入らなかった商品は、理由ごとに確認できます。</p>
+      </li>
+      <li class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        <p class="card-title">出品後の変化を確認できる</p>
+        <p>仕入れ元のメルカリ側の売り切れや値動きを確認できます。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. 実際の画面 -->
+<section id="screens" class="section" aria-labelledby="screens-title">
+  <div class="container">
+    <h2 id="screens-title">実際の画面で見る</h2>
+    <div class="carousel" role="region" aria-roledescription="カルーセル" aria-label="実際の画面（全5枚）">
+      <ul class="slides" id="slides" tabindex="0" aria-label="画像の一覧。左右にスクロールできます">
+        <li class="slide" id="slide-1" aria-label="1 / 5"><img src="assets/slides/slide-1.png" width="1080" height="1350" loading="lazy" alt="Amazon物販、何から始めればいい？ MerFoxなら、商品探しから出品ファイル作成まで一つの流れで進められます。候補を集める、商品を確認、状態と価格、ファイル作成の4段階。"></li>
+        <li class="slide" id="slide-2" aria-label="2 / 5"><img src="assets/slides/slide-2.png" width="1080" height="1350" loading="lazy" alt="ステップ1 まずは、メルカリから商品候補を集める。キーワードとカテゴリー、集める件数を選ぶリサーチ条件の画面。"></li>
+        <li class="slide" id="slide-3" aria-label="3 / 5"><img src="assets/slides/slide-3.png" width="1080" height="1350" loading="lazy" alt="ステップ2 Amazonの同じ商品を確認する。メルカリの商品と、見比べて選ぶAmazonの候補。"></li>
+        <li class="slide" id="slide-4" aria-label="4 / 5"><img src="assets/slides/slide-4.png" width="1080" height="1350" loading="lazy" alt="ステップ3・4 状態と価格を決めて、出品ファイルを作る。状態と価格の決め方を選び、出品ファイルができる。"></li>
+        <li class="slide" id="slide-5" aria-label="5 / 5"><img src="assets/slides/slide-5.png" width="1080" height="1350" loading="lazy" alt="初心者向けガイド付き。出品後の変化も確認できます。初心者向けガイドと在庫監視の画面。Amazonへの登録と商品確認はご自身で行います。macOS Apple Silicon向け。"></li>
+      </ul>
+      <div class="carousel-controls js-only">
+        <button type="button" class="nav prev" id="slide-prev" aria-controls="slides" aria-label="前の画像">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button>
+        <p class="slide-status" id="slide-status" aria-live="polite">1 / 5</p>
+        <button type="button" class="nav next" id="slide-next" aria-controls="slides" aria-label="次の画像">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 役割分担 -->
+<section id="roles" class="section tint" aria-labelledby="roles-title">
+  <div class="container">
+    <h2 id="roles-title">MerFoxが手伝うこと、ご自身で確認すること</h2>
+    <div class="roles">
+      <div class="role role-app">
+        <h3>MerFoxが手伝うこと</h3>
+        <ul>
+          <li>商品候補を集める</li>
+          <li>Amazon商品との確認を助ける</li>
+          <li>状態・価格・説明文を設定する</li>
+          <li>出品ファイルを作る</li>
+          <li>仕入れ元の変化を確認する</li>
+        </ul>
+      </div>
+      <div class="role role-you">
+        <h3>ご自身で確認すること</h3>
+        <ul>
+          <li>商品が同じものか確認する</li>
+          <li>仕入れるかどうかを判断する</li>
+          <li>Amazonへ登録する</li>
+          <li>注文後の購入・検品・発送を行う</li>
+          <li>必要に応じてAmazonの出品を停止する</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">利益や販売の結果を保証するものではありません。Amazon側の審査で、ファイルが受け付けられない場合があります。</p>
+  </div>
+</section>
+
+<!-- 7. 必要なもの -->
+<section id="needs" class="section" aria-labelledby="needs-title">
+  <div class="container">
+    <h2 id="needs-title">始める前に必要なもの</h2>
+    <ul class="needs">
+      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Apple Silicon搭載Mac</li>
+      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Amazon出品用アカウント</li>
+      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3"/></svg>MerFoxライセンスキー<br>（販売担当者から案内）</li>
+    </ul>
+    <p class="note">対象は本・CD・DVD・ゲーム・おもちゃの中古品です。</p>
+  </div>
+</section>
+
+<!-- 8. よくある質問 -->
+<section id="faq" class="section tint" aria-labelledby="faq-title">
+  <div class="container narrow">
+    <h2 id="faq-title">よくある質問</h2>
+    <div class="faq">
+      <details><summary>転売経験がなくても使えますか</summary>
+        <p>はい。画面が順番に並んでいて、その通りに進められます。商品の選び方は、アプリに入っている初心者向けガイドで確認できます。</p></details>
+      <details><summary>ASINとは何ですか</summary>
+        <p>Amazonの商品を見分ける10桁の番号です。MerFoxでは候補から選ぶか、番号やAmazonの商品ページのURLを入力します。</p></details>
+      <details><summary>出品まで自動ですか</summary>
+        <p>いいえ。MerFoxが作るのは出品用のファイルまでです。内容を確認して、Seller Central（Amazonの出品者用の管理画面）で登録するのはご自身です。</p></details>
+      <details><summary>どの商品から始めればよいですか</summary>
+        <p>本・CD・DVD・ゲームソフトの通常版など、商品名や型番がはっきりした単品から始めると迷いにくくなります。</p></details>
+      <details><summary>ライセンスキーはどこで受け取れますか</summary>
+        <p>販売担当者からご案内します。MerFoxを使い始めるときに、アプリの画面でライセンスキーを入力します。1つのキーで使えるMacは1台です。</p></details>
+      <details><summary>Windowsで使えますか</summary>
+        <p>現在の配布版は、macOS（Apple Silicon）向けです。</p></details>
+      <details><summary>利益は保証されますか</summary>
+        <p>保証はしません。利益を計算して表示する画面はありません。手数料や送料はご自身で確認してください。</p></details>
+      <details><summary>候補が見つからない場合はどうしますか</summary>
+        <p>Amazonで商品ページを確認し、ASINまたは商品ページのURLを直接入力できます。同じ商品が無ければ空欄のままにすると、出品ファイルに入りません。</p></details>
+      <details><summary>困った場合はどうしますか</summary>
+        <p>アプリの「設定」画面から、操作ガイドとサポート資料を開けます。解決しないときは、販売担当者へお問い合わせください。</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 9. 最後のCTA -->
+<section id="cta" class="section final" aria-labelledby="cta-title">
+  <div class="container">
+    <h2 id="cta-title">まずはMerFoxの流れを確認する</h2>
+    <div class="cta-row">
+      <!-- パソコンでは DMG を直接ダウンロードし、スマートフォンでは配布ページの導入案内へ送る。
+           どちらを出すかは CSS だけで決める（JavaScript が無くても、スマートフォンで DMG を出さない） -->
+      <a class="btn btn-primary cta-desktop" href="https://github.com/morgrisos/merfox-releases/releases/download/v0.3.2/MerFox-0.3.2-arm64.dmg">
+        Mac版をダウンロード<span class="btn-sub">Apple Silicon搭載Mac用・約530MB</span>
+      </a>
+      <a class="btn btn-primary cta-mobile" href="https://github.com/morgrisos/merfox-releases/releases/tag/v0.3.2" target="_blank" rel="noopener">
+        Macでの入手方法を見る<span class="btn-sub">Apple Silicon搭載Mac用・GitHubの配布ページ</span>
+      </a>
+      <a class="btn btn-secondary on-dark" href="assets/MerFox_customer_guide_v0.3.2.pdf">
+        詳しい案内を見る<span class="btn-sub">PDF・12ページ</span>
+      </a>
+    </div>
+    <p class="cta-note on-dark">ご利用には、<strong>販売担当者から案内されたライセンスキー</strong>が必要です。<br>
+      <a href="https://github.com/morgrisos/merfox-releases/releases/tag/v0.3.2" target="_blank" rel="noopener">インストールの手順を見る（配布ページのReadMe）</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>MerFox v0.3.2 ／ macOS（Apple Silicon）向け。画面の内容はすべてサンプルです。</p>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
